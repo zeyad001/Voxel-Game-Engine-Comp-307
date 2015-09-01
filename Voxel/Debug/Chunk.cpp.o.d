@@ -1,5 +1,5 @@
-Debug/Chunk.cpp.o: Chunk.cpp Chunk.h Block.h Side.h OnTick.h onTick.h \
- FlatArray.h Miscellaneous.h
+Debug/Chunk.cpp.o: Chunk.cpp Chunk.h Block.h Side.h OnTick.h FlatArray.h \
+ BlockManager.h Algorithm.h
 
 Chunk.h:
 
@@ -9,8 +9,8 @@ Side.h:
 
 OnTick.h:
 
-onTick.h:
-
 FlatArray.h:
 
-Miscellaneous.h:
+BlockManager.h:
+
+Algorithm.h:

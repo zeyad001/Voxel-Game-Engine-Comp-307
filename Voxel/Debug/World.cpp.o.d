@@ -1,5 +1,5 @@
 Debug/World.cpp.o: World.cpp World.h Chunk.h Block.h Side.h OnTick.h \
- onTick.h FlatArray.h TerrainGen.h BlockManager.h
+ FlatArray.h BlockManager.h TerrainGen.h
 
 World.h:
 
@@ -11,10 +11,8 @@ Side.h:
 
 OnTick.h:
 
-onTick.h:
-
 FlatArray.h:
 
-TerrainGen.h:
-
 BlockManager.h:
+
+TerrainGen.h:

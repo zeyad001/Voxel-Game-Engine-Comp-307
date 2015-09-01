@@ -1,10 +1,10 @@
-#include "Miscellaneous.h"
+#include "Algorithm.h"
 
-Miscellaneous::Miscellaneous()
+Algorithm::Algorithm()
 {
     // ctor
 }
-std::vector<glm::vec3> Miscellaneous::getVector()
+std::vector<glm::vec3> Algorithm::getVector()
 {
     std::vector<glm::vec3> vertices;
 
@@ -49,7 +49,7 @@ std::vector<glm::vec3> Miscellaneous::getVector()
     return vertices;
 }
 
-void Miscellaneous::fillblock(int i, int j, int k, std::vector<glm::vec3>& vertices)
+void Algorithm::fillblock(int i, int j, int k, std::vector<glm::vec3>& vertices)
 {
 
     vertices.push_back(glm::vec3(i, j, k));
@@ -101,7 +101,7 @@ void Miscellaneous::fillblock(int i, int j, int k, std::vector<glm::vec3>& verti
     vertices.push_back(glm::vec3(i, j + 1, k + 1));
 }
 
-std::vector<glm::vec3> Miscellaneous::getGreedyMesh(Chunk& c)
+std::vector<glm::vec3> Algorithm::getGreedyMesh(Chunk& c)
 {
 
     std::vector<glm::vec3> vertices;
@@ -111,18 +111,18 @@ std::vector<glm::vec3> Miscellaneous::getGreedyMesh(Chunk& c)
             for(int k = 0; k < Chunk::zsize - 1; k++) {
 
                 // find only non air blocks
-                if(c.area.getElement(i, j, k)->blockName != "Air") {
+                if(c.area->getElement(i, j, k)->blockName != "Air") {
 
                     // fill blocks if they next to a air block
                     glm::vec3 openglpoint = c.blockToOpenglCo(i, j, k);
 
-                    if(c.area.getElement(i + 1, j, k)->blockName == "Air" ||
-                       c.area.getElement(i + 1, j + 1, k)->blockName == "Air" ||
-                       c.area.getElement(i, j + 1, k)->blockName == "Air" ||
-                       c.area.getElement(i, j, k + 1)->blockName == "Air" ||
-                       c.area.getElement(i + 1, j, k + 1)->blockName == "Air" ||
-                       c.area.getElement(i + 1, j + 1, k + 1)->blockName == "Air" ||
-                       c.area.getElement(i, j + 1, k + 1)->blockName == "Air") {
+                    if(c.area->getElement(i + 1, j, k)->blockName == "Air" ||
+                       c.area->getElement(i + 1, j + 1, k)->blockName == "Air" ||
+                       c.area->getElement(i, j + 1, k)->blockName == "Air" ||
+                       c.area->getElement(i, j, k + 1)->blockName == "Air" ||
+                       c.area->getElement(i + 1, j, k + 1)->blockName == "Air" ||
+                       c.area->getElement(i + 1, j + 1, k + 1)->blockName == "Air" ||
+                       c.area->getElement(i, j + 1, k + 1)->blockName == "Air") {
 
                         fillblock(openglpoint[0], openglpoint[1], openglpoint[2], vertices);
                     }

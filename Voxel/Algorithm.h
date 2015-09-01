@@ -1,14 +1,14 @@
-#ifndef MISCELLANEOUS_H
-#define MISCELLANEOUS_H
+#ifndef Algorithm_H
+#define Algorithm_H
 #include <vector>
 #include <iostream>
 #include <glm/glm.hpp>
 #include "Chunk.h"
 
-class Miscellaneous
+class Algorithm
 {
 public:
-    Miscellaneous();
+    Algorithm();
     static std::vector<glm::vec3> getVector();
     static std::vector<glm::vec3> getGreedyMesh(Chunk& c);
     static void fillblock(int i, int j, int k, std::vector<glm::vec3>& vertices);

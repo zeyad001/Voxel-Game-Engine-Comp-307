@@ -43,6 +43,10 @@ public:
     {
         return right;
     }
+    int getFPS()
+    {
+        return fps;
+    }
 
 private:
     static Options* opt;
@@ -50,6 +54,7 @@ private:
     int down = 's';
     int left = 'a';
     int right = 'd';
+    int fps = 60;
 };
 
 #endif // OPTIONS_H

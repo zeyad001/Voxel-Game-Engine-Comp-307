@@ -4,9 +4,9 @@
 #include <GL/glew.h>
 #include <glm/vec3.hpp>
 #include <glm/glm.hpp>
-#include "onTick.h"
 #include "FlatArray.h"
 #include <vector>
+#include "BlockManager.h"
 
 class Chunk
 {
@@ -16,8 +16,14 @@ public:
     // Chunk();
     Chunk(int x, int y);
     glm::vec3 referencePoint = { 0, 0, -64 };
-    FlatArray<Block*> area;
+    FlatArray<Block*>* area = nullptr;
     std::vector<glm::vec3> vertices;
+    Block* getAboveBlock(int x, int y, int z);
+    Block* getBelowBlock(int x, int y, int z);
+    Block* getFrontBlock(int x, int y, int z);
+    Block* getBehindBlock(int x, int y, int z);
+    Block* getLeftBlock(int x, int y, int z);
+    Block* getRightBlock(int x, int y, int z);
 
     GLuint vboV;
     GLuint vboF;
@@ -36,6 +42,7 @@ public:
     Block* replacement(int x, int y, int z, Block* b);
     glm::vec3 blockToOpenglCo(int x, int y, int z);
     FlatArray<Block*>& getFlatArray();
+    void removeBlock(int x, int y, int z);
     // template<class Archive>
     // void serialize(Archive & ar, const unsigned int version);
 

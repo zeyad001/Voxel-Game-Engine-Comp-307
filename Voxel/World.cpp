@@ -10,7 +10,7 @@ using namespace std;
 
 World::World()
 {
-    // Chunk* c = TerrainGen::getTerrainManager()->generateFlatSurface(0, 0, -64);
+
     loadConfigs();
 }
 
@@ -39,8 +39,8 @@ void World::loadChunks()
 
     Chunk* c = new Chunk(0, 0);
     TerrainGen::getTerrainManager()->generateFlatSurface(*c);
-   // TerrainGen::getTerrainManager()->generateAllAir(*c);
-   // TerrainGen::getTerrainManager()->generateMantle(*c);
+    // TerrainGen::getTerrainManager()->generateAllAir(*c);
+    TerrainGen::getTerrainManager()->generateMantle(*c);
 
     world.push_back(c);
 }

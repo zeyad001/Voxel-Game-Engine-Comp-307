@@ -33,7 +33,7 @@ const int FPS = 200;
 // int time = 0;
 float x_rotation = 0;
 float y_rotation = 0;
-int time = 0;
+// int time = 0;
 float turn_inc;
 float x_dist_at;
 float camera[3][3] = { { x_dist_at, 0, 0 }, { 0, 0, 0 }, { 0, 0, 1.0f } };
@@ -64,7 +64,7 @@ void sleep(int time)
 void initGL()
 {
     // Set "clearing" or background color
-    glClearColor(1, 1, 1, 1); // White and opaque
+    glClearColor(0, 0, 0, 1); // White and opaque
 
     glEnable(GL_DEPTH_TEST); // turns on hidden surface removal so that objects behind other objects do not get
     glEnable(GL_CULL_FACE);
